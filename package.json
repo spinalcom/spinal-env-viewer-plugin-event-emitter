@@ -1,0 +1,14 @@
+{
+  "name": "spinal-env-viewer-plugin-event-emitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "dev": "tsc -w",
+    "test": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
