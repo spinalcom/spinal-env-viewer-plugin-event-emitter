@@ -23,26 +23,14 @@
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-class SpinalEventEmitter {
+// interface ISpinalEvent {
+//     [key: string]: Array<Function>
+// }
+const events_1 = require("events");
+class SpinalEventEmitter extends events_1.EventEmitter {
+    // private _events: ISpinalEvent = {};
     constructor() {
-        this._events = {};
-    }
-    on(eventName, listener) {
-        console.log("listener", eventName);
-        if (!this._events[eventName]) {
-            this._events[eventName] = [];
-        }
-        this._events[eventName].push(listener);
-    }
-    emit(eventName, data) {
-        console.log("eventName", eventName);
-        if (!this._events[eventName]) {
-            return;
-        }
-        this._events[eventName].forEach((callback) => {
-            if (typeof callback === "function")
-                callback(data);
-        });
+        super();
     }
 }
 exports.SpinalEventEmitter = SpinalEventEmitter;

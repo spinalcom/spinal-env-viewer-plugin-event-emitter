@@ -1,6 +1,5 @@
-export declare class SpinalEventEmitter {
-    private _events;
+/// <reference types="node" />
+import { EventEmitter } from "events";
+export declare class SpinalEventEmitter extends EventEmitter {
     constructor();
-    on(eventName: string, listener: Function): void;
-    emit(eventName: string, data: any): void;
 }

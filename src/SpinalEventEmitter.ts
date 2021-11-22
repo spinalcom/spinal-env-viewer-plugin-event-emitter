@@ -22,36 +22,39 @@
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
 
-interface ISpinalEvent {
-    [key: string]: Array<Function>
-}
+// interface ISpinalEvent {
+//     [key: string]: Array<Function>
+// }
+
+import { EventEmitter } from "events";
 
 
-export class SpinalEventEmitter {
-    private _events: ISpinalEvent = {};
+export class SpinalEventEmitter extends EventEmitter {
+    // private _events: ISpinalEvent = {};
 
     constructor() {
+        super();
     }
 
-    public on(eventName: string, listener: Function) {
-        console.log("listener", eventName)
-        if (!this._events[eventName]) {
-            this._events[eventName] = []
-        }
+    // public on(eventName: string, listener: Function) {
+    //     console.log("listener", eventName)
+    //     if (!this._events[eventName]) {
+    //         this._events[eventName] = []
+    //     }
 
-        this._events[eventName].push(listener);
-    }
+    //     this._events[eventName].push(listener);
+    // }
 
-    public emit(eventName: string, data: any) {
-        console.log("eventName", eventName)
-        if (!this._events[eventName]) {
-            return;
-        }
+    // public emit(eventName: string, data: any) {
+    //     console.log("eventName", eventName)
+    //     if (!this._events[eventName]) {
+    //         return;
+    //     }
 
-        this._events[eventName].forEach((callback) => {
-            if (typeof callback === "function") callback(data);
-        })
+    //     this._events[eventName].forEach((callback) => {
+    //         if (typeof callback === "function") callback(data);
+    //     })
 
-    }
+    // }
 
 }
